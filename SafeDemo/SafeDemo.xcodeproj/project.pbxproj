@@ -98,7 +98,7 @@
 				7C5FB729208D846D00BB69AB /* AppDelegate.m */,
 				7C5FB72B208D846D00BB69AB /* ViewController.h */,
 				7C5FB72C208D846D00BB69AB /* ViewController.m */,
-				7C5FB73E208D84C600BB69AB /* SafeHelper */,
+				7C5FB73E208D84C600BB69AB /* VscSafe */,
 				7C5FB72E208D846D00BB69AB /* Main.storyboard */,
 				7C5FB731208D846F00BB69AB /* Assets.xcassets */,
 				7C5FB733208D846F00BB69AB /* LaunchScreen.storyboard */,
@@ -108,7 +108,7 @@
 			path = SafeDemo;
 			sourceTree = "<group>";
 		};
-		7C5FB73E208D84C600BB69AB /* SafeHelper */ = {
+		7C5FB73E208D84C600BB69AB /* VscSafe */ = {
 			isa = PBXGroup;
 			children = (
 				7C5FB741208D84C600BB69AB /* NSObject+SwizzlingHelper.h */,
@@ -136,7 +136,7 @@
 				7C5FB750208D84C600BB69AB /* UITextField+NullHandler.h */,
 				7C5FB743208D84C600BB69AB /* UITextField+NullHandler.m */,
 			);
-			path = SafeHelper;
+			path = VscSafe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
