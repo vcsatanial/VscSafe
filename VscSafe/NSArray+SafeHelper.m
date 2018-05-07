@@ -17,9 +17,6 @@
     swizzleInstanceMethodWithString(@"__NSArrayI",
                                     @selector(objectAtIndex:),
                                     @selector(safe_objectAtIndex:));
-    swizzleInstanceMethodWithString(@"__NSArrayI",
-                                    @selector(objectAtIndexedSubscript:),
-                                    @selector(safe_objectAtIndexedSubscript:));
     swizzleInstanceMethodWithString(@"__NSSingleObjectArrayI",
                                     @selector(objectAtIndex:),
                                     @selector(safe_single_objectAtIndex:));
@@ -29,6 +26,11 @@
     swizzleInstanceMethodWithString(@"__NSArrayI",
                                     @selector(arrayByAddingObject:),
                                     @selector(safe_arrayByAddingObject:));
+    if (NSFoundationVersionNumber > floor(NSFoundationVersionNumber_iOS_9_x_Max)) {
+        swizzleInstanceMethodWithString(@"__NSArrayI",
+                                        @selector(objectAtIndexedSubscript:),
+                                        @selector(safe_objectAtIndexedSubscript:));
+    }
 }
 -(instancetype)safe_initWithObjects:(id  _Nonnull const [])objects count:(NSUInteger)cnt{
     NSUInteger cus_cnt = 0;

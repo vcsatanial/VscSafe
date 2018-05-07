@@ -1,6 +1,6 @@
 //
 //  NSMutableArray+SafeHelper.m
-//  ttttttt
+//  Visac
 //
 //  Created by Visac on 2018/4/21.
 //  Copyright © 2018年 Visac. All rights reserved.
@@ -24,11 +24,13 @@
                                     @selector(objectAtIndex:),
                                     @selector(safe_objectAtIndex:));
     swizzleInstanceMethodWithString(@"__NSArrayM",
-                                    @selector(objectAtIndexedSubscript:),
-                                    @selector(safe_objectAtIndexedSubscript:));
-    swizzleInstanceMethodWithString(@"__NSArrayM",
                                     @selector(replaceObjectAtIndex:withObject:),
                                     @selector(safe_replaceObjectAtIndex:withObject:));
+    if (NSFoundationVersionNumber > floor(NSFoundationVersionNumber_iOS_9_x_Max)) {
+        swizzleInstanceMethodWithString(@"__NSArrayM",
+                                        @selector(objectAtIndexedSubscript:),
+                                        @selector(safe_objectAtIndexedSubscript:));
+    }
 }
 #pragma mark - 增
 -(void)safe_addObject:(id)anObject{
