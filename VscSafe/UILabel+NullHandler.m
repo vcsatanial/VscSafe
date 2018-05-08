@@ -18,7 +18,7 @@
 #endif
 }
 -(void)null_setText:(NSString *)text{
-    if (![text isKindOfClass:[NSString class]] || [text isEqualToString:@"<null>"]) {
+    if (![text isKindOfClass:[NSString class]] || [text isEqualToString:@"<null>"] || [text isEqualToString:@"(null)"]) {
         text = nil;
     }
     [self null_setText:text];
