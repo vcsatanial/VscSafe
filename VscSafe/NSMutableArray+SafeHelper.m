@@ -26,11 +26,6 @@
     swizzleInstanceMethodWithString(@"__NSArrayM",
                                     @selector(replaceObjectAtIndex:withObject:),
                                     @selector(safe_replaceObjectAtIndex:withObject:));
-    if (NSFoundationVersionNumber > floor(NSFoundationVersionNumber_iOS_9_x_Max)) {
-        swizzleInstanceMethodWithString(@"__NSArrayM",
-                                        @selector(objectAtIndexedSubscript:),
-                                        @selector(safe_objectAtIndexedSubscript:));
-    }
 }
 #pragma mark - 增
 -(void)safe_addObject:(id)anObject{
@@ -61,12 +56,6 @@
         return nil;
     }
     return [self safe_objectAtIndex:index];
-}
--(id)safe_objectAtIndexedSubscript:(NSUInteger)idx{
-    if (idx >= self.count) {
-        return nil;
-    }
-    return [self safe_objectAtIndexedSubscript:idx];
 }
 #pragma mark - 改
 -(void)safe_replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject{

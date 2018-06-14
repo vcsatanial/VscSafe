@@ -26,7 +26,7 @@
     swizzleInstanceMethodWithString(@"__NSArrayI",
                                     @selector(arrayByAddingObject:),
                                     @selector(safe_arrayByAddingObject:));
-    if (NSFoundationVersionNumber > floor(NSFoundationVersionNumber_iOS_9_x_Max)) {
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_9_x_Max) {
         swizzleInstanceMethodWithString(@"__NSArrayI",
                                         @selector(objectAtIndexedSubscript:),
                                         @selector(safe_objectAtIndexedSubscript:));
