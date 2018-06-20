@@ -31,7 +31,7 @@
     if (!str) {
         str = @"";
     }
-    return [self safe_initWithString:str];
+    return [self safe_initWithString:str attributes:attrs];
 }
 -(instancetype)safe_initWithAttributedString:(NSAttributedString *)attrStr{
     if (!attrStr) {
