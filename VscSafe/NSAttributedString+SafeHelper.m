@@ -23,19 +23,19 @@
 }
 -(instancetype)safe_initWithString:(NSString *)str{
     if (!str) {
-        return nil;
+        str = @"";
     }
     return [self safe_initWithString:str];
 }
 -(instancetype)safe_initWithString:(NSString *)str attributes:(NSDictionary<NSAttributedStringKey,id> *)attrs{
     if (!str) {
-        return nil;
+        str = @"";
     }
     return [self safe_initWithString:str];
 }
 -(instancetype)safe_initWithAttributedString:(NSAttributedString *)attrStr{
     if (!attrStr) {
-        return nil;
+        strattrStr = [[NSAttributedString alloc] initWithString:@""];
     }
     return [self safe_initWithAttributedString:attrStr];
 }
