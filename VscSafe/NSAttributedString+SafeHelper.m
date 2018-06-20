@@ -35,7 +35,7 @@
 }
 -(instancetype)safe_initWithAttributedString:(NSAttributedString *)attrStr{
     if (!attrStr) {
-        strattrStr = [[NSAttributedString alloc] initWithString:@""];
+        attrStr = [[NSAttributedString alloc] initWithString:@""];
     }
     return [self safe_initWithAttributedString:attrStr];
 }
