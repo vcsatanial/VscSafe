@@ -18,6 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //可以在这里测试常见系统代码中会产生崩溃的语句,如发现更好或者没有涵盖的Demo,请联系116359398@qq.com
+    NSString *test;
+    NSDictionary *dic = @{@"123":test,@"345":@"1231"};
+    NSLog(@"%@",dic);
+    return;
 }
 
 

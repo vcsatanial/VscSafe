@@ -24,6 +24,9 @@
                                     @selector(objectAtIndex:),
                                     @selector(safe_objectAtIndex:));
     swizzleInstanceMethodWithString(@"__NSArrayM",
+                                    @selector(objectAtIndexedSubscript:),
+                                    @selector(safe_objectAtIndexedSubscript:));
+    swizzleInstanceMethodWithString(@"__NSArrayM",
                                     @selector(replaceObjectAtIndex:withObject:),
                                     @selector(safe_replaceObjectAtIndex:withObject:));
 }
@@ -56,6 +59,12 @@
         return nil;
     }
     return [self safe_objectAtIndex:index];
+}
+-(id)safe_objectAtIndexedSubscript:(NSUInteger)idx{
+    if (idx >= self.count) {
+        return nil;
+    }
+    return [self safe_objectAtIndexedSubscript:idx];
 }
 #pragma mark - 改
 -(void)safe_replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject{
